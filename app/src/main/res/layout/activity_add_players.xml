@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg"
+    tools:context=".addPlayers">
+
+    <TextView
+        android:id="@+id/enterNames"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="Enter Player Names"
+        >
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="357dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="70sp"
+        android:layout_marginEnd="25sp"
+        android:background="@drawable/rounded_input_names"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_margin="8sp"
+            android:src="@drawable/close"></ImageView>
+
+        <EditText
+            android:id="@+id/playerOne"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5sp"
+            android:layout_marginEnd="10sp"
+            android:hint="Player One..."
+            android:textStyle="bold"
+            android:textColorHint="@color/teal_700"
+            android:textColor="@color/teal_700"
+
+            >
+
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="357dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="130sp"
+        android:layout_marginEnd="25sp"
+        android:background="@drawable/rounded_input_names"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="35sp"
+            android:layout_height="35sp"
+            android:layout_margin="8sp"
+            android:src="@drawable/zero"></ImageView>
+
+        <EditText
+            android:id="@+id/playerTwo"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5sp"
+            android:layout_marginEnd="10sp"
+            android:hint="Player Two..."
+            android:textStyle="bold"
+            android:textColorHint="@color/teal_700"
+            android:textColor="@color/teal_700"
+
+            >
+
+        </EditText>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60sp"
+        android:layout_marginEnd="60sp"
+        android:layout_marginTop="210sp"
+        android:text="Start Game!"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_start_button"
+        >
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+</RelativeLayout>
