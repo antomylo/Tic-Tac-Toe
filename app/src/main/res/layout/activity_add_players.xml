@@ -86,15 +86,15 @@
         android:id="@+id/startGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="60sp"
-        android:layout_marginEnd="60sp"
         android:layout_marginTop="210sp"
-        android:text="Start Game!"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+        android:layout_marginEnd="60sp"
         android:background="@drawable/rounded_start_button"
-        >
+        android:text="Start Game!"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold">
 
     </androidx.appcompat.widget.AppCompatButton>
 
