@@ -26,7 +26,7 @@ public class AddPlayers extends AppCompatActivity {
             final String playerTwoName = binding.playerTwoName.getText().toString();
 
             if (playerOneName.isBlank() || playerTwoName.isBlank()) {
-                Toast.makeText(getApplicationContext(), "Please enter the required names", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Names fields cannot be empty!", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(AddPlayers.this, MainActivity.class);
                 intent.putExtra("playerOne", playerOneName);

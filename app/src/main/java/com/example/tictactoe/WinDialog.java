@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.tictactoe.databinding.WinDialogContainerBinding;
+
 public class WinDialog extends Dialog {
 
+    private WinDialogContainerBinding binding;
     private String message;
     private MainActivity mainActivity;
 
@@ -23,8 +26,8 @@ public class WinDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.win_dialog_container);
+        binding = WinDialogContainerBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         final TextView messageTxt = findViewById(R.id.messageText);
         final Button startAgainBtn = findViewById(R.id.startAgainBtn);
