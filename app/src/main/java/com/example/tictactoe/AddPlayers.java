@@ -22,8 +22,8 @@ public class AddPlayers extends AppCompatActivity {
 
         binding = ActivityAddPlayersBinding.inflate(getLayoutInflater());
 
-        final EditText player1 = binding.playerOne;
-        final EditText player2 = binding.playerTwo;
+        final EditText player1 = binding.playerOneName;
+        final EditText player2 = binding.playerTwoName;
         final Button startBtn = binding.startGame;
 
         startBtn.setOnClickListener(new View.OnClickListener() {
