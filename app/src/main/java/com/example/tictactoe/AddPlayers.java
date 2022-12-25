@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.tictactoe.databinding.ActivityAddPlayersBinding;
@@ -18,13 +17,10 @@ public class AddPlayers extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_players);
-
         binding = ActivityAddPlayersBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        final Button startBtn = binding.startGame;
-
-        startBtn.setOnClickListener(view -> {
+        binding.startGame.setOnClickListener(view -> {
             Log.d(TAG, "onCreate: button clicked");
             final String playerOneName = binding.playerOneName.getText().toString();
             final String playerTwoName = binding.playerTwoName.getText().toString();
