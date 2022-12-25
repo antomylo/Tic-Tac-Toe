@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/orange_200"
-    android:layout_margin="30sp">
+    android:paddingBottom="20dp"
+    android:background="@color/orange_200">
 
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/win_game"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/messageText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="25sp"
-            android:layout_marginStart="25sp"
-            android:layout_marginEnd="25sp"
-            android:gravity="center"
-            android:text="@string/win_game"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startAgainBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_blue_borders"
+        android:padding="20sp"
+        android:text="@string/start_again"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/messageText"
+        app:layout_constraintStart_toStartOf="@id/messageText"
+        app:layout_constraintEnd_toEndOf="@id/messageText">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/startAgainBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="20sp"
-            android:layout_marginTop="20dp"
-            android:padding="20sp"
-            android:background="@drawable/rounded_blue_borders"
-            android:text="Start Again"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/messageText">
-
-        </androidx.appcompat.widget.AppCompatButton>
+    </androidx.appcompat.widget.AppCompatButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
