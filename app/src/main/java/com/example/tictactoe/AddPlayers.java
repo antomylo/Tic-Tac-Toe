@@ -32,9 +32,9 @@ public class AddPlayers extends AppCompatActivity {
                 final String playerOneName = player1.getText().toString();
                 final String playerTwoName = player2.getText().toString();
 
-                if(playerOneName.isEmpty() || playerTwoName.isEmpty()){
-                    Toast.makeText(AddPlayers.this,"Please enter the required names", Toast.LENGTH_SHORT).show();
-                }else{
+                if (playerOneName.isEmpty() || playerTwoName.isEmpty()) {
+                    Toast.makeText(AddPlayers.this, "Please enter the required names", Toast.LENGTH_SHORT).show();
+                } else {
                     Intent intent = new Intent(AddPlayers.this, MainActivity.class);
                     intent.putExtra("playerOne", playerOneName);
                     intent.putExtra("playerTwo", playerTwoName);

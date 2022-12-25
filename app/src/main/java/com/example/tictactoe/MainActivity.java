@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         img_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(0)){
+                if (isBoxSelectable(0)) {
 
                 }
             }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         img_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(1)){
+                if (isBoxSelectable(1)) {
 
                 }
             }
@@ -92,14 +92,14 @@ public class MainActivity extends AppCompatActivity {
         img_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(2));
+                if (isBoxSelectable(2)) ;
             }
         });
 
         img_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(3)){
+                if (isBoxSelectable(3)) {
                 }
             }
         });
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         img_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(4)){
+                if (isBoxSelectable(4)) {
 
                 }
             }
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         img_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(5)){
+                if (isBoxSelectable(5)) {
 
                 }
             }
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         img_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(6)){
+                if (isBoxSelectable(6)) {
 
                 }
             }
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         img_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(7)){
+                if (isBoxSelectable(7)) {
 
                 }
             }
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         img_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isBoxSelectable(8)){
+                if (isBoxSelectable(8)) {
 
                 }
             }
@@ -175,11 +175,11 @@ public class MainActivity extends AppCompatActivity {
                 WinDialog winDialog = new WinDialog(MainActivity.this, player2Name.getText().toString() + " has won the game", MainActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
-            } else if (selectedBoxPosition == 9 ){
+            } else if (selectedBoxPosition == 9) {
                 WinDialog winDialog = new WinDialog(MainActivity.this, "It is a Draw!", MainActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
-            }else{
+            } else {
                 changePlayerTurn(1);
                 totalSelectedBoxes++;
             }
@@ -199,16 +199,16 @@ public class MainActivity extends AppCompatActivity {
         return response;
     }
 
-    private boolean isBoxSelectable(int boxPosition){
+    private boolean isBoxSelectable(int boxPosition) {
         boolean response = false;
 
-        if(boxPositions[boxPosition] == 0){
+        if (boxPositions[boxPosition] == 0) {
             response = true;
         }
         return response;
     }
 
-    private boolean changePlayerTurn(int currentPlayerTurn){
+    private boolean changePlayerTurn(int currentPlayerTurn) {
         playerTurn = currentPlayerTurn;
 
         if (playerTurn == 1) {
@@ -218,8 +218,6 @@ public class MainActivity extends AppCompatActivity {
             player2Layout.setBackgroundResource(R.drawable.rounded_blue_borders);
             player1Layout.setBackgroundResource(R.drawable.round_back_dark_blue);
         }
+        return true; // todo: remove later
     }
-
-
-
 }

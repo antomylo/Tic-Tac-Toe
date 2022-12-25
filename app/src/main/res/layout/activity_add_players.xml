@@ -4,105 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@drawable/bg"
     tools:context=".AddPlayers">
 
     <TextView
-        android:id="@+id/enterNames"
-        android:layout_width="match_parent"
+        android:id="@+id/enterPlayerNamesTopText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/enter_player_names"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:text="Enter Player Names"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-    </TextView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/inputPlayerOne"
-        android:layout_width="357dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="70sp"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player_one_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_input_names"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/enterNames"
-        app:layout_constraintLeft_toLeftOf="@id/enterNames"
-        app:layout_constraintRight_toRightOf="@id/enterNames">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enterPlayerNamesTopText">
 
         <ImageView
-            android:layout_width="35sp"
-            android:layout_height="35sp"
-            android:layout_margin="8sp"
-            android:src="@drawable/close"></ImageView>
+            android:id="@+id/close"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/playerOne"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5sp"
-            android:layout_marginEnd="10sp"
-            android:hint="Player One..."
+            android:id="@+id/player_one_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/player_one_hint"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/teal_700"
             android:textColorHint="@color/teal_700"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/close"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            >
 
-        </EditText>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/inputPlayerTwo"
-        android:layout_width="357dp"
-        android:layout_height="50dp"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player_two_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rounded_input_names"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/inputPlayerOne"
-        app:layout_constraintLeft_toLeftOf="@+id/inputPlayerOne"
-        app:layout_constraintRight_toRightOf="@+id/inputPlayerOne">
+        app:layout_constraintEnd_toEndOf="@id/player_one_layout"
+        app:layout_constraintStart_toStartOf="@id/player_one_layout"
+        app:layout_constraintTop_toBottomOf="@id/player_one_layout">
 
         <ImageView
-            android:layout_width="35sp"
-            android:layout_height="35sp"
-            android:layout_margin="8sp"
-            android:src="@drawable/zero"></ImageView>
+            android:id="@+id/zero"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/zero"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/playerTwo"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5sp"
-            android:layout_marginEnd="10sp"
-            android:hint="Player Two..."
+            android:id="@+id/player_two_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/player_two_hint"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/teal_700"
             android:textColorHint="@color/teal_700"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/zero"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </EditText>
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20sp"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_start_button"
-        android:text="Start Game!"
+        android:padding="15dp"
+        android:text="@string/start_game"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/inputPlayerTwo"
-        app:layout_constraintLeft_toLeftOf="@+id/inputPlayerTwo"
-        app:layout_constraintRight_toRightOf="@+id/inputPlayerTwo">
-    </androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player_two_layout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
