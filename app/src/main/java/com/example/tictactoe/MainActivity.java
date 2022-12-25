@@ -2,17 +2,24 @@ package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.tictactoe.databinding.ActivityAddPlayersBinding;
+import com.example.tictactoe.databinding.ActivityMainBinding;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
 
     private List<int[]> combinations = new ArrayList<>();
 
@@ -31,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView player1Name = findViewById(R.id.playerOneName);
-        TextView player2Name = findViewById(R.id.playerTwoName);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        TextView player1Name = binding.playerOneName;
+        TextView player2Name = binding.playerTwoName;
 
         LinearLayout player1Layout = findViewById(R.id.playerOneLayout);
         LinearLayout player2Layout = findViewById(R.id.playerTwoLayout);
@@ -166,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 WinDialog winDialog = new WinDialog(MainActivity.this, player2Name.getText().toString() + " has won the game", MainActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();
-            } else if ( ==9 ){
+            } else if (selectedBoxPosition == 9 ){
                 WinDialog winDialog = new WinDialog(MainActivity.this, "It is a Draw!", MainActivity.this);
                 winDialog.setCancelable(false);
                 winDialog.show();

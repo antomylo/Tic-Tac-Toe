@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/bg"
-    tools:context=".addPlayers">
+    tools:context=".AddPlayers">
 
     <TextView
         android:id="@+id/enterNames"
@@ -18,17 +18,20 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:text="Enter Player Names"
+        app:layout_constraintTop_toTopOf="parent"
         >
     </TextView>
 
     <LinearLayout
+        android:id="@+id/inputPlayerOne"
         android:layout_width="357dp"
         android:layout_height="50dp"
-        android:layout_marginStart="25sp"
         android:layout_marginTop="70sp"
-        android:layout_marginEnd="25sp"
         android:background="@drawable/rounded_input_names"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/enterNames"
+        app:layout_constraintLeft_toLeftOf="@id/enterNames"
+        app:layout_constraintRight_toRightOf="@id/enterNames">
 
         <ImageView
             android:layout_width="35sp"
@@ -37,30 +40,32 @@
             android:src="@drawable/close"></ImageView>
 
         <EditText
-            android:inputType="text"
-            android:maxLines="1"
             android:id="@+id/playerOne"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_marginStart="5sp"
             android:layout_marginEnd="10sp"
             android:hint="Player One..."
-            android:textStyle="bold"
-            android:textColorHint="@color/teal_700"
+            android:inputType="text"
+            android:maxLines="1"
             android:textColor="@color/teal_700"
+            android:textColorHint="@color/teal_700"
+            android:textStyle="bold"
 
             >
 
         </EditText>
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/inputPlayerTwo"
         android:layout_width="357dp"
         android:layout_height="50dp"
-        android:layout_marginStart="25sp"
-        android:layout_marginTop="130sp"
-        android:layout_marginEnd="25sp"
         android:background="@drawable/rounded_input_names"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/inputPlayerOne"
+        app:layout_constraintLeft_toLeftOf="@+id/inputPlayerOne"
+        app:layout_constraintRight_toRightOf="@+id/inputPlayerOne">
 
         <ImageView
             android:layout_width="35sp"
@@ -69,35 +74,35 @@
             android:src="@drawable/zero"></ImageView>
 
         <EditText
-            android:inputType="text"
-            android:maxLines="1"
             android:id="@+id/playerTwo"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_marginStart="5sp"
             android:layout_marginEnd="10sp"
             android:hint="Player Two..."
-            android:textStyle="bold"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/teal_700"
             android:textColorHint="@color/teal_700"
-            android:textColor="@color/teal_700">
+            android:textStyle="bold">
 
         </EditText>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startGame"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="60sp"
-        android:layout_marginTop="210sp"
-        android:layout_marginEnd="60sp"
         android:background="@drawable/rounded_start_button"
         android:text="Start Game!"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold">
-
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/inputPlayerTwo"
+        app:layout_constraintLeft_toLeftOf="@+id/inputPlayerTwo"
+        app:layout_constraintRight_toRightOf="@+id/inputPlayerTwo">
     </androidx.appcompat.widget.AppCompatButton>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

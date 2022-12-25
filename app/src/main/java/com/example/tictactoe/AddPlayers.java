@@ -9,16 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class addPlayers extends AppCompatActivity {
+import com.example.tictactoe.databinding.ActivityAddPlayersBinding;
+
+public class AddPlayers extends AppCompatActivity {
+
+    private ActivityAddPlayersBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_players);
 
-        final EditText player1 = findViewById(R.id.playerOne);
-        final EditText player2 = findViewById(R.id.playerTwo);
-        final Button startBtn = findViewById(R.id.startGame);
+        binding = ActivityAddPlayersBinding.inflate(getLayoutInflater());
+
+        final EditText player1 = binding.playerOne;
+        final EditText player2 = binding.playerTwo;
+        final Button startBtn = binding.startGame;
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,9 +33,9 @@ public class addPlayers extends AppCompatActivity {
                 final String playerTwoName = player2.getText().toString();
 
                 if(playerOneName.isEmpty() || playerTwoName.isEmpty()){
-                    Toast.makeText(addPlayers.this,"Please enter the required names", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPlayers.this,"Please enter the required names", Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent = new Intent(addPlayers.this, MainActivity.class);
+                    Intent intent = new Intent(AddPlayers.this, MainActivity.class);
                     intent.putExtra("playerOne", playerOneName);
                     intent.putExtra("playerTwo", playerTwoName);
                     startActivity(intent);
