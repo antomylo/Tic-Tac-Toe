@@ -1,6 +1,7 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -43,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         TextView player1Name = binding.playerOneName;
         TextView player2Name = binding.playerTwoName;
 
-        LinearLayout player1Layout = findViewById(R.id.playerOneLayout);
-        LinearLayout player2Layout = findViewById(R.id.playerTwoLayout);
+        ConstraintLayout player1Layout = findViewById(R.id.playerOneLayout);
+        ConstraintLayout player2Layout = findViewById(R.id.playerTwoLayout);
 
         ImageView img_1 = findViewById(R.id.img_1);
         ImageView img_2 = findViewById(R.id.img_2);
